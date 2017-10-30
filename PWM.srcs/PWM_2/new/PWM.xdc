@@ -1,0 +1,8 @@
+set_property PACKAGE_PIN T17 [get_ports key1]
+set_property PACKAGE_PIN W19 [get_ports key2]
+set_property PACKAGE_PIN W5 [get_ports sclk]
+set_property PACKAGE_PIN J1 [get_ports PWM]
+set_property IOSTANDARD LVTTL [get_ports PWM]
+set_property IOSTANDARD LVTTL [get_ports key1]
+set_property IOSTANDARD LVTTL [get_ports key2]
+set_property IOSTANDARD LVTTL [get_ports sclk]
