@@ -1,0 +1,5 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  "../../../Design/IP_Core/MULT/Mult/sim/Mult.vhd"
+
+# Do not sort compile order
+nosort

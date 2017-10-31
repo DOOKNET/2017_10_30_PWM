@@ -1,0 +1,46 @@
+#-----------------------------------------------------------
+# Vivado v2016.4 (64-bit)
+# SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
+# IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
+# Start of session at: Tue Oct 31 09:02:09 2017
+# Process ID: 11588
+# Current directory: E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/Mult_synth_1
+# Command line: vivado.exe -log Mult.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Mult.tcl
+# Log file: E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/Mult_synth_1/Mult.vds
+# Journal file: E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/Mult_synth_1\vivado.jou
+#-----------------------------------------------------------
+source Mult.tcl -notrace
+Starting Synthesize : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 306.109 ; gain = 95.609
+INFO: [Synth 8-638] synthesizing module 'Mult' [e:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/IP_Core/MULT/Mult/synth/Mult.vhd:67]
+INFO: [Synth 8-256] done synthesizing module 'Mult' (5#1) [e:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/IP_Core/MULT/Mult/synth/Mult.vhd:67]
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 353.152 ; gain = 142.652
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 353.152 ; gain = 142.652
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 353.152 ; gain = 142.652
+INFO: [Device 21-403] Loading part xc7a35tcpg236-1
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:14 . Memory (MB): peak = 360.813 ; gain = 150.313
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 475.813 ; gain = 265.313
+Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 475.813 ; gain = 265.313
+Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 476.938 ; gain = 266.438
+Finished IO Insertion : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 476.938 ; gain = 266.438
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 476.938 ; gain = 266.438
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 476.938 ; gain = 266.438
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:18 ; elapsed = 00:00:20 . Memory (MB): peak = 476.938 ; gain = 266.438
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 476.938 ; gain = 266.438
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 476.938 ; gain = 266.438
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |CARRY4   |    14|
+|2     |LUT1     |     9|
+|3     |LUT2     |    41|
+|4     |LUT3     |     9|
+|5     |LUT4     |    36|
+|6     |MULT_AND |    44|
+|7     |MUXCY    |    44|
+|8     |XORCY    |    48|
++------+---------+------+
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:18 ; elapsed = 00:00:21 . Memory (MB): peak = 476.938 ; gain = 266.438
+synth_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 552.641 ; gain = 322.031
+write_checkpoint: Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1001.098 ; gain = 448.457

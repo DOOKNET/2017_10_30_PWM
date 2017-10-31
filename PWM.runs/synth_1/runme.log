@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log PWM.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source PWM.tcl
+    with args -log PWM_1.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source PWM_1.tcl
 
 
 ****** Vivado v2016.4 (64-bit)
@@ -8,27 +8,28 @@
   **** IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
     ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 
-source PWM.tcl -notrace
-Command: synth_design -top PWM -part xc7a35tcpg236-1
+source PWM_1.tcl -notrace
+Command: synth_design -top PWM_1 -part xc7a35tcpg236-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 4416 
+INFO: Helper process launched with PID 11636 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 296.250 ; gain = 86.344
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:09 . Memory (MB): peak = 296.449 ; gain = 86.234
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'PWM' [E:/Workspace/Vivado_16.4/2017_10_28_PWM/Design/Code/PWM.v:1]
-	Parameter period bound to: 2000000 - type: integer 
-	Parameter pulse_min bound to: 50000 - type: integer 
-	Parameter pulse_middle bound to: 150000 - type: integer 
-	Parameter pulse_max bound to: 250000 - type: integer 
-	Parameter pulse_step bound to: 500 - type: integer 
-WARNING: [Synth 8-3936] Found unconnected internal register 'pulse_r1_reg' and it is trimmed from '32' to '1' bits. [E:/Workspace/Vivado_16.4/2017_10_28_PWM/Design/Code/PWM.v:23]
-WARNING: [Synth 8-3936] Found unconnected internal register 'pulse_r0_reg' and it is trimmed from '32' to '1' bits. [E:/Workspace/Vivado_16.4/2017_10_28_PWM/Design/Code/PWM.v:22]
-INFO: [Synth 8-256] done synthesizing module 'PWM' (1#1) [E:/Workspace/Vivado_16.4/2017_10_28_PWM/Design/Code/PWM.v:1]
+INFO: [Synth 8-638] synthesizing module 'PWM_1' [E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/Code/PWM_1.v:1]
+	Parameter period bound to: 24'b000111101000010010000000 
+	Parameter pulse_min bound to: 16'b1100001101010000 
+	Parameter pulse_middle bound to: 20'b00100100100111110000 
+	Parameter pulse_max bound to: 20'b00111101000010010000 
+	Parameter pulse_step bound to: 10'b1011100101 
+INFO: [Synth 8-638] synthesizing module 'Mult' [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1/.Xil/Vivado-10132-DESKTOP-JC6NIF0/realtime/Mult_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'Mult' (1#1) [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1/.Xil/Vivado-10132-DESKTOP-JC6NIF0/realtime/Mult_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'PWM_1' (2#1) [E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/Code/PWM_1.v:1]
+WARNING: [Synth 8-3331] design PWM_1 has unconnected port sig_done
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 333.688 ; gain = 123.781
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 332.918 ; gain = 122.703
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -38,42 +39,51 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:11 . Memory (MB): peak = 333.688 ; gain = 123.781
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 332.918 ; gain = 122.703
 ---------------------------------------------------------------------------------
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'Mult' instantiated as 'Mult_inst0' [E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/Code/PWM_1.v:38]
 INFO: [Device 21-403] Loading part xc7a35tcpg236-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.srcs/PWM_2/new/PWM.xdc]
-Finished Parsing XDC File [E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.srcs/PWM_2/new/PWM.xdc]
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.srcs/PWM_2/new/PWM.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PWM_propImpl.xdc].
-Resolution: To avoid this warning, move constraints listed in [.Xil/PWM_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1/.Xil/Vivado-10132-DESKTOP-JC6NIF0/dcp/Mult_in_context.xdc] for cell 'Mult_inst0'
+Finished Parsing XDC File [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1/.Xil/Vivado-10132-DESKTOP-JC6NIF0/dcp/Mult_in_context.xdc] for cell 'Mult_inst0'
+Parsing XDC File [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc]
+WARNING: [Vivado 12-584] No ports matched 'key1'. [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc:1]
+WARNING: [Vivado 12-584] No ports matched 'key2'. [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc:2]
+WARNING: [Vivado 12-584] No ports matched 'key1'. [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc:6]
+WARNING: [Vivado 12-584] No ports matched 'key2'. [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc:7]
+Finished Parsing XDC File [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/PWM_1_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/PWM_1_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/PWM_1_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 618.887 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 624.988 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a35tcpg236-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:26 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/Code/PWM_1.v:45]
 INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:00:23 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -86,15 +96,19 @@ Start RTL Component Statistics
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 2     
-	                1 Bit    Registers := 3     
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 1     
-	   4 Input     18 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -103,18 +117,22 @@ Finished RTL Component Statistics
 Start RTL Hierarchical Component Statistics 
 ---------------------------------------------------------------------------------
 Hierarchical RTL Component report 
-Module PWM 
+Module PWM_1 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 2     
-	                1 Bit    Registers := 3     
+	               32 Bit    Registers := 1     
+	               20 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
 +---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
 	   2 Input     32 Bit        Muxes := 1     
-	   4 Input     18 Bit        Muxes := 1     
-	   2 Input     10 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input     18 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
 	   2 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
@@ -132,8 +150,9 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5545] ROM "cnt" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+WARNING: [Synth 8-3331] design PWM_1 has unconnected port sig_done
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:29 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -148,10 +167,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Timing Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:38 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -163,7 +182,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:44 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Technology Mapping : Time (s): cpu = 00:00:35 ; elapsed = 00:00:39 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -187,7 +206,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished IO Insertion : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -200,7 +219,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -212,68 +231,70 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:36 ; elapsed = 00:00:39 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |Mult          |         1|
++------+--------------+----------+
 
 Report Cell Usage: 
 +------+-------+------+
 |      |Cell   |Count |
 +------+-------+------+
-|1     |BUFG   |     1|
-|2     |CARRY4 |    32|
-|3     |LUT1   |    66|
-|4     |LUT2   |    31|
-|5     |LUT3   |     3|
-|6     |LUT4   |    74|
-|7     |LUT5   |     8|
-|8     |LUT6   |    15|
-|9     |FDRE   |    57|
-|10    |FDSE   |    10|
-|11    |IBUF   |     3|
-|12    |OBUF   |     1|
+|1     |Mult   |     1|
+|2     |BUFG   |     1|
+|3     |CARRY4 |    26|
+|4     |LUT1   |    53|
+|5     |LUT2   |    19|
+|6     |LUT3   |    26|
+|7     |LUT4   |    48|
+|8     |LUT5   |    10|
+|9     |LUT6   |     4|
+|10    |FDRE   |    62|
+|11    |FDSE   |     1|
+|12    |IBUF   |    10|
+|13    |OBUF   |     1|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+---------+-------+------+
 |      |Instance |Module |Cells |
 +------+---------+-------+------+
-|1     |top      |       |   301|
+|1     |top      |       |   280|
 +------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:36 ; elapsed = 00:00:40 . Memory (MB): peak = 624.988 ; gain = 414.773
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:30 . Memory (MB): peak = 618.887 ; gain = 112.148
-Synthesis Optimization Complete : Time (s): cpu = 00:00:39 ; elapsed = 00:00:45 . Memory (MB): peak = 618.887 ; gain = 408.980
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:27 . Memory (MB): peak = 624.988 ; gain = 108.863
+Synthesis Optimization Complete : Time (s): cpu = 00:00:37 ; elapsed = 00:00:40 . Memory (MB): peak = 624.988 ; gain = 414.773
 INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 35 Unisim elements for replacement
+INFO: [Netlist 29-17] Analyzing 36 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
@@ -281,9 +302,9 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-17 Infos, 2 Warnings, 0 Critical Warnings and 0 Errors encountered.
+20 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:37 ; elapsed = 00:00:42 . Memory (MB): peak = 618.887 ; gain = 404.371
-INFO: [Common 17-1381] The checkpoint 'E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.runs/synth_1/PWM.dcp' has been generated.
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 618.887 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Oct 29 00:07:35 2017...
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:37 . Memory (MB): peak = 624.988 ; gain = 403.754
+INFO: [Common 17-1381] The checkpoint 'E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1/PWM_1.dcp' has been generated.
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.016 . Memory (MB): peak = 624.988 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Tue Oct 31 09:23:04 2017...

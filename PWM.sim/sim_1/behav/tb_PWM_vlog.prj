@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  "../../../Design/Code/PWM.v"
+verilog xil_defaultlib  "../../../Design/Code/PWM_1.v"
 verilog xil_defaultlib  "../../../TestBeach/tb_PWM.v"
 
 # compile glbl module

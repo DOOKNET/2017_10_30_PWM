@@ -2,11 +2,11 @@
 # Vivado v2016.4 (64-bit)
 # SW Build 1733598 on Wed Dec 14 22:35:39 MST 2016
 # IP Build 1731160 on Wed Dec 14 23:47:21 MST 2016
-# Start of session at: Sun Oct 29 00:06:47 2017
-# Process ID: 15732
-# Current directory: E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.runs/synth_1
-# Command line: vivado.exe -log PWM.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PWM.tcl
-# Log file: E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.runs/synth_1/PWM.vds
-# Journal file: E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.runs/synth_1\vivado.jou
+# Start of session at: Tue Oct 31 09:22:22 2017
+# Process ID: 10132
+# Current directory: E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1
+# Command line: vivado.exe -log PWM_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source PWM_1.tcl
+# Log file: E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1/PWM_1.vds
+# Journal file: E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source PWM.tcl -notrace
+source PWM_1.tcl -notrace

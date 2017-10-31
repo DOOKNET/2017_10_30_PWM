@@ -1,6 +1,6 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Workspace/Vivado_16.4/2017_10_28_PWM/Design/Code/PWM.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module PWM
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Workspace/Vivado_16.4/2017_10_28_PWM/TestBeach/tb_PWM.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/Code/PWM_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PWM_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Workspace/Vivado_16.4/2017_10_30_PWM/TestBeach/tb_PWM.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_PWM
-INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Workspace/Vivado_16.4/2017_10_28_PWM/PWM.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.sim/sim_1/behav/glbl.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module glbl

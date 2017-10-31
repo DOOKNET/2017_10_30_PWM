@@ -1,9 +1,8 @@
-`timescale  1ns/1ps
+`timescale  1us/1ps
 module tb_PWM();
 
 reg     SCLK;
-reg     key1;
-reg     key2;
+reg     [8:0]   angle;
 wire    PWM;
 
 initial
@@ -14,15 +13,14 @@ always
 
 initial 
 begin
-    key1 = 0;
-    key2 = 0;
+    angle = 0;
 end
 
-PWM         PWM_inst(
-    .sclk   (SCLK),
-    .key1   (key1),
-    .key2   (key2),
-    .PWM    (PWM)
+ PWM_1          PWM_1_inst0(
+    .sclk       (SCLK),
+    .angle      (angle),
+    .sig_done   (1),
+    .PWM        (PWM)
 );
 
 
