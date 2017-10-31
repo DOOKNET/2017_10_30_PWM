@@ -35,13 +35,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="4"/>
-    <Option Name="WTModelSimExportSim" Val="4"/>
-    <Option Name="WTQuestaExportSim" Val="4"/>
-    <Option Name="WTIesExportSim" Val="4"/>
-    <Option Name="WTVcsExportSim" Val="4"/>
-    <Option Name="WTRivieraExportSim" Val="4"/>
-    <Option Name="WTActivehdlExportSim" Val="4"/>
+    <Option Name="WTXSimExportSim" Val="6"/>
+    <Option Name="WTModelSimExportSim" Val="6"/>
+    <Option Name="WTQuestaExportSim" Val="6"/>
+    <Option Name="WTIesExportSim" Val="6"/>
+    <Option Name="WTVcsExportSim" Val="6"/>
+    <Option Name="WTRivieraExportSim" Val="6"/>
+    <Option Name="WTActivehdlExportSim" Val="6"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -51,6 +51,13 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
+      <File Path="$PPRDIR/Design/IP_Core/MULT/Mult/Mult.xci">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PPRDIR/Design/Code/PWM_1.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -124,33 +131,6 @@
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
-    <FileSet Name="Mult" Type="BlockSrcs" RelSrcDir="$PSRCDIR/Mult">
-      <File Path="$PPRDIR/Design/IP_Core/MULT/Mult/Mult.xci">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_sim_netlist.vhdl"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_sim_netlist.v"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_stub.vhdl"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_stub.v"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult.xml"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/xbip_bram18k_v3_0_vh_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/xbip_utils_v3_0_vh_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="synth/Mult.vhd"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/xbip_pipe_v3_0_vh_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="doc/mult_gen_v12_0_changelog.txt"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult.veo"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="sim/Mult.vhd"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/mult_gen_v12_0_vh_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult.vho"/>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="Mult"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
   </FileSets>
   <Simulators>
     <Simulator Name="XSim">
@@ -179,14 +159,6 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="Mult_synth_1" Type="Ft3:Synth" SrcSet="Mult" Part="xc7a35tcpg236-1" ConstrsSet="Mult" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/Mult_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016"/>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="PWM_2" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
@@ -203,21 +175,6 @@
         </Step>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-      <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
-    </Run>
-    <Run Id="Mult_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="Mult" Description="Default settings for Implementation." SynthRun="Mult_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
   </Runs>

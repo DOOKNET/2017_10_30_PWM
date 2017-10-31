@@ -9,7 +9,7 @@ parameter   period = 24'd2_000_000;             //PWM波形周期20ms,频率为5
 parameter   pulse_min = 16'd50_000;             //最小脉宽为0.5ms
 parameter   pulse_middle = 20'd150_000;         //中间脉宽为1.5ms
 parameter   pulse_max = 20'd250_000;            //最大脉宽为2.5ms
-parameter   pulse_step = 10'd741;               //脉宽步进1°
+parameter   pulse_step = 11'd1111;              //脉宽步进1°
 reg     [31:0]    cnt = 32'd0;                  //脉宽计数
 reg     pulse = 0;                              //PWM脉冲
 reg     pulse_r0 = 0;
@@ -17,7 +17,7 @@ reg     pulse_r1 = 0;
 wire    pulse_pose;                             //PWM波形上升沿
 
 reg     [8:0]   delta_angle = 0;                //输入角度与标准角度（135）之差
-wire    [18:0]  width;                          //乘法器输出脉宽
+wire    [19:0]  width;                          //乘法器输出脉宽
 reg     flag = 0;
 reg     [19:0]  pulse_width = 20'd150_000;      //PWM脉宽
 
@@ -25,12 +25,12 @@ reg     [19:0]  pulse_width = 20'd150_000;      //PWM脉宽
 
 //------------计算脉宽------------//
 always @(posedge sclk) begin
-    if(angle <= 9'd135) begin
-        delta_angle <= 9'd135 - angle;
+    if(angle <= 9'd90) begin
+        delta_angle <= 9'd90 - angle;
         flag <= 0;
     end
-    else if(angle > 9'd135 && angle <= 9'd270)    begin
-        delta_angle <= angle - 9'd135;
+    else if(angle > 9'd90 && angle <= 9'd180)    begin
+        delta_angle <= angle - 9'd90;
         flag <= 1;
     end
 end

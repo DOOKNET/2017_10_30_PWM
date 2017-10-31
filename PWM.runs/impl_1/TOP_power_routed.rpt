@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.4 (win64) Build 1733598 Wed Dec 14 22:35:39 MST 2016
-| Date             : Tue Oct 31 16:49:54 2017
+| Date             : Tue Oct 31 20:19:52 2017
 | Host             : DESKTOP-JC6NIF0 running 64-bit major release  (build 9200)
 | Command          : report_power -file TOP_power_routed.rpt -pb TOP_power_summary_routed.pb -rpx TOP_power_routed.rpx
 | Design           : TOP
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+-------+
-| Total On-Chip Power (W)  | 4.210 |
-| Dynamic (W)              | 4.124 |
-| Device Static (W)        | 0.085 |
+| Total On-Chip Power (W)  | 4.329 |
+| Dynamic (W)              | 4.243 |
+| Device Static (W)        | 0.086 |
 | Effective TJA (C/W)      | 5.0   |
-| Max Ambient (C)          | 64.0  |
-| Junction Temperature (C) | 46.0  |
+| Max Ambient (C)          | 63.4  |
+| Junction Temperature (C) | 46.6  |
 | Confidence Level         | Low   |
 | Setting File             | ---   |
 | Simulation Activity File | ---   |
@@ -49,16 +49,16 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.240 |      331 |       --- |             --- |
-|   LUT as Logic |     0.980 |      149 |     20800 |            0.72 |
-|   CARRY4       |     0.227 |       52 |      8150 |            0.64 |
-|   Register     |     0.027 |       74 |     41600 |            0.18 |
+| Slice Logic    |     1.275 |      341 |       --- |             --- |
+|   LUT as Logic |     1.004 |      145 |     20800 |            0.70 |
+|   CARRY4       |     0.238 |       57 |      8150 |            0.70 |
+|   Register     |     0.027 |       72 |     41600 |            0.17 |
 |   BUFG         |     0.006 |        1 |        32 |            3.13 |
-|   Others       |     0.000 |       17 |       --- |             --- |
-| Signals        |     1.062 |      262 |       --- |             --- |
-| I/O            |     1.822 |        9 |       106 |            8.49 |
-| Static Power   |     0.085 |          |           |                 |
-| Total          |     4.210 |          |           |                 |
+|   Others       |     0.000 |       26 |       --- |             --- |
+| Signals        |     1.132 |      273 |       --- |             --- |
+| I/O            |     1.837 |        9 |       106 |            8.49 |
+| Static Power   |     0.086 |          |           |                 |
+| Total          |     4.329 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -68,9 +68,9 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     2.352 |       2.330 |      0.021 |
-| Vccaux    |       1.800 |     0.079 |       0.066 |      0.014 |
-| Vcco33    |       3.300 |     0.509 |       0.508 |      0.001 |
+| Vccint    |       1.000 |     2.456 |       2.434 |      0.022 |
+| Vccaux    |       1.800 |     0.080 |       0.066 |      0.014 |
+| Vcco33    |       3.300 |     0.513 |       0.512 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |
@@ -135,12 +135,12 @@ Table of Contents
 +--------------------------------+-----------+
 | Name                           | Power (W) |
 +--------------------------------+-----------+
-| TOP                            |     4.124 |
-|   PWM_1                        |     2.191 |
-|     Mult_inst0                 |     0.881 |
-|       U0                       |     0.881 |
-|         i_mult                 |     0.881 |
-|           gLUT.gLUT_speed.iLUT |     0.881 |
+| TOP                            |     4.243 |
+|   PWM_1                        |     2.293 |
+|     Mult_inst0                 |     0.940 |
+|       U0                       |     0.940 |
+|         i_mult                 |     0.940 |
+|           gLUT.gLUT_speed.iLUT |     0.940 |
 +--------------------------------+-----------+
 
 

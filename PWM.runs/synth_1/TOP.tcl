@@ -10,24 +10,28 @@ create_project -in_memory -part xc7a35tcpg236-1
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.cache/wt [current_project]
 set_property parent.project_path E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo e:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
-add_files -quiet E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/IP_Core/MULT/Mult/Mult.dcp
-set_property used_in_implementation false [get_files E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/IP_Core/MULT/Mult/Mult.dcp]
 read_verilog -library xil_defaultlib {
   E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/Code/PWM_1.v
   E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/Code/TOP.v
 }
+read_ip -quiet E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/IP_Core/MULT/Mult/Mult.xci
+set_property is_locked true [get_files E:/Workspace/Vivado_16.4/2017_10_30_PWM/Design/IP_Core/MULT/Mult/Mult.xci]
+
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
 read_xdc E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc
 set_property used_in_implementation false [get_files E:/Workspace/Vivado_16.4/2017_10_30_PWM/PWM.srcs/PWM_2/new/PWM.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 
 synth_design -top TOP -part xc7a35tcpg236-1
 

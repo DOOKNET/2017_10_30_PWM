@@ -56,8 +56,8 @@
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 Mult your_instance_name (
   .A(A),  // input wire [8 : 0] A
-  .B(B),  // input wire [9 : 0] B
-  .P(P)  // output wire [18 : 0] P
+  .B(B),  // input wire [10 : 0] B
+  .P(P)  // output wire [19 : 0] P
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------
 

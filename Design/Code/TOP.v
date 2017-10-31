@@ -1,12 +1,13 @@
 module TOP(
     input   sclk,
-    input   key0,   //0     -135
-    input   key1,   //45    -90
-    input   key2,   //90    -45
-    input   key3,   //135   0
-    input   key4,   //180   45
-    input   key5,   //225   90
-    input   key6,   //270   135
+    input   key0,   //0     -90
+    input   key1,   //45    -45
+    input   key2,   //90    -0
+    input   key3,   //135   45
+    input   key4,   //180   90
+    input   key5,   //30   -60
+    input   key6,   //60   -30
+
     output  PWM
 
 );
@@ -19,8 +20,8 @@ always @(posedge sclk) begin
     else if(key2)    angle <= 9'd90;
     else if(key3)    angle <= 9'd135;
     else if(key4)    angle <= 9'd180;
-    else if(key5)    angle <= 9'd225;
-    else if(key6)    angle <= 9'd270;
+    else if(key5)    angle <= 9'd30;
+    else if(key6)    angle <= 9'd60;
     else angle <= angle;
 end
 
