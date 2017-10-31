@@ -16,12 +16,7 @@ begin
     angle = 0;
 end
 
- PWM_1          PWM_1_inst0(
-    .sclk       (SCLK),
-    .angle      (angle),
-    .sig_done   (1),
-    .PWM        (PWM)
-);
+
 
 
 

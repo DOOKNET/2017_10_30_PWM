@@ -58,9 +58,24 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/Design/Code/TOP.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/Design/Code/uart_rx.v">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="PWM_1"/>
+        <Option Name="TopModule" Val="TOP"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
       </Config>
     </FileSet>
@@ -81,6 +96,7 @@
       <Filter Type="Srcs"/>
       <File Path="$PPRDIR/TestBeach/tb_PWM.v">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -88,7 +104,7 @@
       </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="tb_PWM"/>
+        <Option Name="TopModule" Val="TOP"/>
         <Option Name="TopLib" Val="xil_defaultlib"/>
         <Option Name="TopAutoSet" Val="TRUE"/>
         <Option Name="TransportPathDelay" Val="0"/>
@@ -115,6 +131,20 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult_stub.v"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult.xml"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/xbip_bram18k_v3_0_vh_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/xbip_utils_v3_0_vh_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="synth/Mult.vhd"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/xbip_pipe_v3_0_vh_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="doc/mult_gen_v12_0_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult.veo"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="sim/Mult.vhd"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="hdl/mult_gen_v12_0_vh_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="Mult.xci" FileRelPathName="Mult.vho"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="Mult"/>
@@ -157,7 +187,7 @@
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
-    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="PWM_2" Description="Default settings for Implementation." State="current" SynthRun="synth_1" IncludeInArchive="true">
+    <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="PWM_2" Description="Default settings for Implementation." State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016"/>
         <Step Id="init_design"/>
@@ -172,6 +202,7 @@
           <Option Id="BinFile">1</Option>
         </Step>
       </Strategy>
+      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
       <Report Name="ROUTE_DESIGN.REPORT_METHODOLOGY" Enabled="1"/>
     </Run>
     <Run Id="Mult_impl_1" Type="Ft2:EntireDesign" Part="xc7a35tcpg236-1" ConstrsSet="Mult" Description="Default settings for Implementation." SynthRun="Mult_synth_1" IncludeInArchive="false">

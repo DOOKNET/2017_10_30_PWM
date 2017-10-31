@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1509412939">
-  <File Type="RDS-PROPCONSTRS" Name="PWM_1_drc_synth.rpt"/>
-  <File Type="PA-TCL" Name="PWM_1.tcl"/>
-  <File Type="RDS-RDS" Name="PWM_1.vds"/>
-  <File Type="RDS-UTIL" Name="PWM_1_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="PWM_1_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="PWM_1.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="PWM_1_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="PWM_1_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a35tcpg236-1" LaunchTime="1509439681">
+  <File Type="RDS-PROPCONSTRS" Name="TOP_drc_synth.rpt"/>
+  <File Type="PA-TCL" Name="TOP.tcl"/>
+  <File Type="RDS-RDS" Name="TOP.vds"/>
+  <File Type="RDS-UTIL" Name="TOP_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="TOP_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="TOP.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="TOP_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="TOP_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PPRDIR/Design/Code/PWM_1.v">
@@ -17,9 +17,24 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/Design/Code/TOP.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/Design/Code/uart_rx.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="PWM_1"/>
+      <Option Name="TopModule" Val="TOP"/>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
   </FileSet>

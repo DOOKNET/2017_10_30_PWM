@@ -30,7 +30,7 @@ always @(posedge sclk) begin
         flag <= 0;
     end
     else if(angle > 9'd135 && angle <= 9'd270)    begin
-        delta_angle <= 9'd270 - angle;
+        delta_angle <= angle - 9'd135;
         flag <= 1;
     end
 end
