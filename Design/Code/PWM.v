@@ -1,5 +1,5 @@
 module PWM(
-    input   sclk,       //100M晶振
+    input   sclk,       //100M系统时钟
     input   key1,
     input   key2,
     output  PWM
