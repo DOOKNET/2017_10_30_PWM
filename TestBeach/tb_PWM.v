@@ -25,7 +25,4 @@ PWM         PWM_inst(
     .PWM    (PWM)
 );
 
-
-
-
 endmodule 
